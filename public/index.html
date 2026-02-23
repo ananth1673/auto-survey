@@ -33,6 +33,7 @@ h2 {
   text-align: center;
   margin-bottom: 25px;
   font-weight: 700;
+  letter-spacing: 1px;
   color: #333;
 }
 
@@ -68,11 +69,6 @@ input:focus, select:focus {
   outline: none;
 }
 
-input:read-only {
-  background-color: #f2f2f2;
-  cursor: not-allowed;
-}
-
 button {
   margin-top: 25px;
   padding: 14px;
@@ -84,6 +80,7 @@ button {
   cursor: pointer;
   transition: 0.3s ease;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 button:hover {
@@ -97,6 +94,7 @@ button:hover {
   font-weight: bold;
 }
 
+/* Mobile Responsive */
 @media(max-width: 768px){
   .form-grid {
     grid-template-columns: 1fr;
@@ -108,7 +106,7 @@ button:hover {
 <body>
 
 <div class="container">
-  <h2>Auto Driver Survey</h2>
+  <h2> Auto Driver Survey</h2>
 
   <form id="surveyForm">
     <div class="form-grid">
@@ -117,19 +115,50 @@ button:hover {
         <label>City</label>
         <input name="city" required>
       </div>
-
-      <div class="form-group">
-        <label>District</label>
-        <select name="district" required>
-          <option value="">Select District</option>
-          <option>Chennai</option>
-          <option>Coimbatore</option>
-          <option>Madurai</option>
-          <option>Salem</option>
-          <option>Tiruchirappalli</option>
-        </select>
-      </div>
-
+<div class="form-group">
+  <label>District (Tamil Nadu)</label>
+  <select name="district" required>
+    <option value="">Select District</option>
+    <option>Ariyalur</option>
+    <option>Chengalpattu</option>
+    <option>Chennai</option>
+    <option>Coimbatore</option>
+    <option>Cuddalore</option>
+    <option>Dharmapuri</option>
+    <option>Dindigul</option>
+    <option>Erode</option>
+    <option>Kallakurichi</option>
+    <option>Kanchipuram</option>
+    <option>Kanyakumari</option>
+    <option>Karur</option>
+    <option>Krishnagiri</option>
+    <option>Madurai</option>
+    <option>Mayiladuthurai</option>
+    <option>Nagapattinam</option>
+    <option>Namakkal</option>
+    <option>Nilgiris</option>
+    <option>Perambalur</option>
+    <option>Pudukkottai</option>
+    <option>Ramanathapuram</option>
+    <option>Ranipet</option>
+    <option>Salem</option>
+    <option>Sivaganga</option>
+    <option>Tenkasi</option>
+    <option>Thanjavur</option>
+    <option>Theni</option>
+    <option>Thoothukudi</option>
+    <option>Tiruchirappalli</option>
+    <option>Tirunelveli</option>
+    <option>Tirupathur</option>
+    <option>Tiruppur</option>
+    <option>Tiruvallur</option>
+    <option>Tiruvannamalai</option>
+    <option>Tiruvarur</option>
+    <option>Vellore</option>
+    <option>Viluppuram</option>
+    <option>Virudhunagar</option>
+  </select>
+</div>
       <div class="form-group">
         <label>Survey Person ID</label>
         <input name="survey_person_id" required>
@@ -142,7 +171,7 @@ button:hover {
 
       <div class="form-group">
         <label>Gender</label>
-        <select name="gender" required>
+        <select name="gender">
           <option value="male">Male</option>
           <option value="female">Female</option>
           <option value="prefer_not_to_say">Prefer Not To Say</option>
@@ -155,9 +184,13 @@ button:hover {
       </div>
 
       <div class="form-group">
+        <label>Number Plate</label>
+        <input name="number_plate">
+      </div>
+
+      <div class="form-group">
         <label>Vehicle Type</label>
-        <select name="vehicle_type" id="vehicleType" required>
-          <option value="">Select</option>
+        <select name="vehicle_type">
           <option value="own">Own</option>
           <option value="rental">Rental</option>
         </select>
@@ -165,17 +198,22 @@ button:hover {
 
       <div class="form-group">
         <label>Investment (Rs)</label>
-        <input type="number" name="investment_rs" id="investmentField">
+        <input type="number" name="investment_rs">
       </div>
 
       <div class="form-group">
         <label>Rental Amount (Rs)</label>
-        <input type="number" name="rental_amount_rs" id="rentalField">
+        <input type="number" name="rental_amount_rs">
       </div>
 
       <div class="form-group">
-        <label>Daily Income</label>
-        <input type="number" name="daily_income">
+        <label>Auto Value</label>
+        <input type="number" name="auto_value">
+      </div>
+
+      <div class="form-group">
+        <label>Daily KM</label>
+        <input type="number" name="daily_km">
       </div>
 
       <div class="form-group">
@@ -184,49 +222,98 @@ button:hover {
       </div>
 
       <div class="form-group">
-        <label>Peak Start Time</label>
-        <select name="peak_start_time" id="startTime" required>
-          <option value="">Start Time</option>
-          <option>6 AM</option>
-          <option>7 AM</option>
-          <option>8 AM</option>
-          <option>9 AM</option>
-          <option>10 AM</option>
-          <option>11 AM</option>
-          <option>12 PM</option>
-          <option>1 PM</option>
-          <option>2 PM</option>
-          <option>3 PM</option>
-          <option>4 PM</option>
-          <option>5 PM</option>
-          <option>6 PM</option>
-          <option>7 PM</option>
-          <option>8 PM</option>
-          <option>9 PM</option>
+        <label>Daily Income</label>
+        <input type="number" name="daily_income">
+      </div>
+
+      <div class="form-group">
+        <label>Maintenance / Month</label>
+        <input type="number" name="maintenance_month">
+      </div>
+
+      <div class="form-group">
+        <label>Profit</label>
+        <input type="number" name="profit">
+      </div>
+
+      <div class="form-group">
+  <label>Peak Start Time</label>
+  <select name="peak_start_time" required>
+    <option value="">Select Start Time</option>
+    <option>12 AM</option>
+    <option>1 AM</option>
+    <option>2 AM</option>
+    <option>3 AM</option>
+    <option>4 AM</option>
+    <option>5 AM</option>
+    <option>6 AM</option>
+    <option>7 AM</option>
+    <option>8 AM</option>
+    <option>9 AM</option>
+    <option>10 AM</option>
+    <option>11 AM</option>
+    <option>12 PM</option>
+    <option>1 PM</option>
+    <option>2 PM</option>
+    <option>3 PM</option>
+    <option>4 PM</option>
+    <option>5 PM</option>
+    <option>6 PM</option>
+    <option>7 PM</option>
+    <option>8 PM</option>
+    <option>9 PM</option>
+    <option>10 PM</option>
+    <option>11 PM</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label>Peak End Time</label>
+  <select name="peak_end_time" required>
+    <option value="">Select End Time</option>
+    <option>12 AM</option>
+    <option>1 AM</option>
+    <option>2 AM</option>
+    <option>3 AM</option>
+    <option>4 AM</option>
+    <option>5 AM</option>
+    <option>6 AM</option>
+    <option>7 AM</option>
+    <option>8 AM</option>
+    <option>9 AM</option>
+    <option>10 AM</option>
+    <option>11 AM</option>
+    <option>12 PM</option>
+    <option>1 PM</option>
+    <option>2 PM</option>
+    <option>3 PM</option>
+    <option>4 PM</option>
+    <option>5 PM</option>
+    <option>6 PM</option>
+    <option>7 PM</option>
+    <option>8 PM</option>
+    <option>9 PM</option>
+    <option>10 PM</option>
+    <option>11 PM</option>
+  </select>
+</div>
+
+      <div class="form-group">
+        <label>No. of Autos in City</label>
+        <input type="number" name="autos_in_city">
+      </div>
+
+      <div class="form-group">
+        <label>Night Ride Acceptance</label>
+        <select name="night_ride_acceptance">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label>Peak End Time</label>
-        <select name="peak_end_time" id="endTime" required>
-          <option value="">End Time</option>
-          <option>6 AM</option>
-          <option>7 AM</option>
-          <option>8 AM</option>
-          <option>9 AM</option>
-          <option>10 AM</option>
-          <option>11 AM</option>
-          <option>12 PM</option>
-          <option>1 PM</option>
-          <option>2 PM</option>
-          <option>3 PM</option>
-          <option>4 PM</option>
-          <option>5 PM</option>
-          <option>6 PM</option>
-          <option>7 PM</option>
-          <option>8 PM</option>
-          <option>9 PM</option>
-        </select>
+        <label>Run Days Per Month</label>
+        <input type="number" name="run_days_per_month">
       </div>
 
     </div>
@@ -237,39 +324,12 @@ button:hover {
 </div>
 
 <script>
-const vehicleType = document.getElementById("vehicleType");
-const investmentField = document.getElementById("investmentField");
-const rentalField = document.getElementById("rentalField");
-
-vehicleType.addEventListener("change", function () {
-
-  if (this.value === "own") {
-    rentalField.value = 0;
-    rentalField.readOnly = true;
-    investmentField.readOnly = false;
-  }
-
-  if (this.value === "rental") {
-    investmentField.value = 0;
-    investmentField.readOnly = true;
-    rentalField.readOnly = false;
-  }
-});
-
-// Validate peak time order
 document.getElementById("surveyForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const start = document.getElementById("startTime").selectedIndex;
-  const end = document.getElementById("endTime").selectedIndex;
-
-  if (start >= end) {
-    alert("Peak End Time must be after Start Time");
-    return;
-  }
-
   const formData = new FormData(this);
   const data = Object.fromEntries(formData.entries());
+  data.night_ride_acceptance = data.night_ride_acceptance === "true";
 
   const response = await fetch("/survey", {
     method: "POST",
@@ -284,8 +344,6 @@ document.getElementById("surveyForm").addEventListener("submit", async function(
     messageDiv.style.color = "green";
     messageDiv.textContent = "✔ Survey submitted successfully!";
     this.reset();
-    rentalField.readOnly = false;
-    investmentField.readOnly = false;
   } else {
     messageDiv.style.color = "red";
     messageDiv.textContent = result.error || "Something went wrong";
